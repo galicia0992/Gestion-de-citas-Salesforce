@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="open" type="boolean" default="false"></aura:attribute>
+
+    
+    
+    <lightning:button variant="brand" label="Crear nuevo doctor" title="Alta Doctor" onclick="{! c.openModal }" />
+    <c:modalAltaDoc open="{!v.open}"></c:modalAltaDoc>
+</aura:component>

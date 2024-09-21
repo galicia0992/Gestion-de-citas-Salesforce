@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+<p>hola</p>
+
+</aura:component>	
