@@ -1,16 +1,21 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
     <aura:attribute name="openModalDoc" type="boolean" default="false"></aura:attribute>
     <aura:attribute name="openModalPaciente" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="openModalCitas" type="boolean" default="false"></aura:attribute>
     <lightning:card>
+
         <aura:set attribute="actions">
             <div>
                 <lightning:button variant="brand" label="Crear nuevo doctor" title="Alta Doctor"
                     onclick="{! c.openModalDoc }" />
                     <lightning:button variant="brand" label="Crear nuevo paciente" title="Alta Paciente"
                     onclick="{! c.openModalPaciente }" />
+                    <lightning:button variant="brand" label="Crear nueva cita" title="Alta Cita"
+                    onclick="{! c.openModalCita }" />
             </div>
         </aura:set>
     </lightning:card>
     <c:modalAltaDoc openModalDoc="{!v.openModalDoc}"></c:modalAltaDoc>
     <c:modalAltaPaciente openModalPaciente="{!v.openModalPaciente}"></c:modalAltaPaciente>
+    <c:modalAltaCitas openModalCitas="{!v.openModalCitas}"></c:modalAltaCitas>
 </aura:component>
