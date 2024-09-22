@@ -1,0 +1,35 @@
+<aura:component>
+    <aura:attribute name="openModalCitas" type="boolean" default="false"></aura:attribute>
+
+    <aura:if isTrue="{!v.openModalCitas}">
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close">
+                    <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1">Modal header</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:layout multipleRows="true">
+                        <lightning:layoutItem padding="around-small" size="12">
+                            <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Citas__c"
+                                onsuccess="{!c.handleSuccess}">
+                                <lightning:messages />
+                                <lightning:inputField fieldName="Detalles__c" />
+                                <lightning:inputField fieldName="Doctores__c" />
+                                <lightning:inputField fieldName="Fecha_de_cita__c" />
+                                <lightning:inputField fieldName="Paciente__c" />
+                                <lightning:button class="slds-m-top_small" label="Cancel" onclick="{!c.closeModal}" />
+                                <lightning:button class="slds-m-top_small" type="submit" variant="brand"
+                                    label="Create new" />
+                            </lightning:recordEditForm>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </aura:if>
+</aura:component>
