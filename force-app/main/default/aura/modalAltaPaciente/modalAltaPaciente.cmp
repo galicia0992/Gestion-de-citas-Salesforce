@@ -1,8 +1,6 @@
 <aura:component>
-    
-    <aura:attribute name="openModalDoc" type="boolean" default="false"></aura:attribute>
-    
-    <aura:if isTrue="{!v.openModalDoc}">
+    <aura:attribute name="openModalPaciente" type="boolean" default="false"></aura:attribute>
+    <aura:if isTrue="{!v.openModalPaciente}">
         <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
             class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
@@ -15,17 +13,20 @@
                 <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                     <lightning:layout multipleRows="true">
                         <lightning:layoutItem padding="around-small" size="12">
-                            <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Doctores__c" onsuccess="{!c.handleSuccess}">
+                            <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Paciente__c"
+                                onsuccess="{!c.handleSuccess}">
                                 <lightning:messages />
                                 <lightning:inputField fieldName="Name" />
                                 <lightning:inputField fieldName="Segundo_nombre__c" />
                                 <lightning:inputField fieldName="Primer_apellido__c" />
                                 <lightning:inputField fieldName="Segundo_apellido__c" />
                                 <lightning:inputField fieldName="Telefono__c" />
-                                <lightning:inputField fieldName="Especialidad__c" />
-                                <lightning:inputField fieldName="Costo__c" />
-                                <lightning:button class="slds-m-top_small"  label="Cancel" onclick="{!c.closeModal}" />
-                                <lightning:button class="slds-m-top_small" type="submit" variant="brand" label="Create new" />
+                                <lightning:inputField fieldName="Edad__c" />
+                                <lightning:inputField fieldName="Estatura__c" />
+                                <lightning:inputField fieldName="Peso__c" />
+                                <lightning:button class="slds-m-top_small" label="Cancel" onclick="{!c.closeModal}" />
+                                <lightning:button class="slds-m-top_small" type="submit" variant="brand"
+                                    label="Create new" />
                             </lightning:recordEditForm>
                         </lightning:layoutItem>
                     </lightning:layout>

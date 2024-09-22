@@ -6,12 +6,12 @@
         var toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
             "title": "Success!",
-            "message": "The record " + + event.getParam("id") + " has been created successfully."
+            "message": "The record " + event.getParam("id") + " has been created successfully."
         });
         toastEvent.fire();
-        component.set('v.openModalDoc', false)
+        component.set('v.openModalPaciente', false)
     },
     closeModal : function (component) {
-        component.set('v.openModalDoc', false)
+        component.set('v.openModalPaciente', false)
     }
 })
