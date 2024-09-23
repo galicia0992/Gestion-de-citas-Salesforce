@@ -9,6 +9,8 @@
             "message": "The record " + + event.getParam("id") + " has been created successfully."
         });
         toastEvent.fire();
+        let refreshDoctorDatatable = $A.get('e.c:doctoresDatatableRefresh')
+        refreshDoctorDatatable.fire()
         component.set('v.openModalDoc', false)
     },
     closeModal : function (component) {

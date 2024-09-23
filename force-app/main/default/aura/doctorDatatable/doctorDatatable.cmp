@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="obtenerDoctores">
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="data" type="object"></aura:attribute>
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:handler event="c.doctoresDatatableRefresh" action="{!c.init}"></aura:handler>
+    
+    <lightning:card title="Doctores">
+        <div style="height: 300px;">
+            <lightning:datatable keyField="id" data="{! v.data }" columns="{! v.columns }" hideCheckboxColumn="true" />
+        </div>
+    </lightning:card>
+</aura:component>
